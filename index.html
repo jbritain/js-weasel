@@ -2,20 +2,25 @@
 	<head>
 		<title>weasel</title>
 		<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet">
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	</head>
 	
 	<style>
 		body {
-			padding: 1em;
+			/*padding: 1em;*/
 		}
 	</style>
 	
-	<body>
+	<body class="p-5">
 		<h1>weasel</h1>
-		<h2>by jbritain</h2>
+		<h2 class="f3-light">by jbritain</h2>
 		<a href="https://en.wikipedia.org/wiki/Weasel_program">what is the weasel?</a>
-		<a href="../">back</a>
+		<br>
+		<a class="btn" href="../">back</a>
+		<button onclick="window.location.reload()" class="btn">try again</button>
+
+		<ol id="weaselContainer">
+		</ol>
 		
 		<script src="weasel.js">
 			
