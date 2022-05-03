@@ -1,6 +1,7 @@
 var target = "methinks it is like a weasel";
 var threshhold = 0.05;
 var possibleChars = "abcdefghijklmnopqrstuvwxyz ";
+var container = document.getElementById("weaselContainer")
 
 function randomWeasel() {
     var output = [];
@@ -63,10 +64,11 @@ for (gen = 0; true; gen++){
     })
     
     if(bestWeasels[gen].text == target){
-        p = document.createElement("p");
+        li = document.createElement("li");
         console.log(gen.toString() + ": " + bestWeasels[gen].text);
-        p.innerHTML = gen.toString() + ": " + bestWeasels[gen].text;
-        document.body.appendChild(p);
+        li.innerHTML = bestWeasels[gen].text;
+	li.value = gen.toString();
+        container.appendChild(li);
         break;
     }
 
@@ -77,16 +79,18 @@ for (gen = 0; true; gen++){
     */
     try {
         if(bestWeasels[gen].text != bestWeasels[gen - 1].text){
-            p = document.createElement("p");
-            console.log(gen.toString() + ": " + bestWeasels[gen].text);
-            p.innerHTML = gen.toString() + ": " + bestWeasels[gen].text;
-            document.body.appendChild(p);
+            li = document.createElement("li");
+        	console.log(gen.toString() + ": " + bestWeasels[gen].text);
+        	li.innerHTML = bestWeasels[gen].text;
+		li.value = gen.toString();
+        	container.appendChild(li);
         }
     }catch(e){
-        p = document.createElement("p");
+        li = document.createElement("li");
         console.log(gen.toString() + ": " + bestWeasels[gen].text);
-        p.innerHTML = gen.toString() + ": " + bestWeasels[gen].text;
-        document.body.appendChild(p);
+        li.innerHTML = bestWeasels[gen].text;
+	li.value = gen.toString();
+        container.appendChild(li);
     }
     
 }
